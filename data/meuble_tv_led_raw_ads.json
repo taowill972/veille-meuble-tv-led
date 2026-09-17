@@ -307,9 +307,9 @@
     "ad_type": "offer",
     "url": "https://www.leboncoin.fr/ad/ameublement/3267215816",
     "price": [
-      150
+      149
     ],
-    "price_cents": 15000,
+    "price_cents": 14900,
     "images": {
       "thumb_url": "https://img.leboncoin.fr/api/v1/lbcpb1/images/fb/fd/e1/fbfde190d11b987b707767283d40525efd3305a5.jpg?rule=ad-thumb",
       "small_url": "https://img.leboncoin.fr/api/v1/lbcpb1/images/fb/fd/e1/fbfde190d11b987b707767283d40525efd3305a5.jpg?rule=ad-small",
@@ -513,15 +513,6 @@
           "165"
         ],
         "value_label": "165",
-        "generic": false
-      },
-      {
-        "key": "payment_methods",
-        "value": "installments3x",
-        "values": [
-          "installments3x"
-        ],
-        "value_label": "installments3x",
         "generic": false
       },
       {

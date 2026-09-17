@@ -6,6 +6,10 @@ contenant 3 feuilles rigoureusement structurées et stylisées.
 """
 
 import os
+import sys
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
 import json
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
