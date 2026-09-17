@@ -233,21 +233,21 @@ def generate_dashboard():
           <span>Tous les Meubles LED</span>
           <span class="ml-1 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20">{len(listings)}</span>
         </button>
-        <button class="segmented-pill" onclick="setFilter('rgb', this)">
-          <i data-lucide="gamepad-2" class="w-3 h-3 inline mr-1 text-pink-400"></i>
-          <span>Télécommande RGB</span>
-        </button>
-        <button class="segmented-pill" onclick="setFilter('laque', this)">
+        <button class="segmented-pill" onclick="setFilter('blanc', this)">
           <i data-lucide="sparkle" class="w-3 h-3 inline mr-1 text-amber-400"></i>
           <span>Blanc Laqué</span>
         </button>
-        <button class="segmented-pill" onclick="setFilter('scenic', this)">
-          <i data-lucide="car" class="w-3 h-3 inline mr-1 text-emerald-400"></i>
-          <span>Format Scénic III (≤ 140cm)</span>
+        <button class="segmented-pill" onclick="setFilter('noir', this)">
+          <i data-lucide="moon" class="w-3 h-3 inline mr-1 text-purple-400"></i>
+          <span>Noir & Finition Sombre</span>
+        </button>
+        <button class="segmented-pill" onclick="setFilter('verre', this)">
+          <i data-lucide="layers" class="w-3 h-3 inline mr-1 text-teal-400"></i>
+          <span>Verre Trempé & Clips</span>
         </button>
         <button class="segmented-pill" onclick="setFilter('budget', this)">
-          <i data-lucide="tag" class="w-3 h-3 inline mr-1 text-blue-400"></i>
-          <span>Moins de 50 €</span>
+          <i data-lucide="tag" class="w-3 h-3 inline mr-1 text-emerald-400"></i>
+          <span>Super Affaire (≤ 50 €)</span>
         </button>
       </div>
 
@@ -281,16 +281,16 @@ def generate_dashboard():
         url = it.get("url", "")
         item_id = it.get("id", "")
 
-        is_rgb = "télécommande" in remote_status.lower() or "rgb" in led_type.lower()
-        is_laque = "laqué" in finish_name.lower() or "laque" in title.lower()
-        is_scenic = it.get("length_cm", 130) <= 140
+        is_blanc = "blanc" in finish_name.lower() or "blanc" in title.lower() or "laqué" in finish_name.lower() or "laque" in title.lower()
+        is_noir = "noir" in finish_name.lower() or "noir" in title.lower() or "sombre" in title.lower() or "gris" in title.lower()
+        is_verre = "verre" in led_type.lower() or "verre" in remote_status.lower() or "verre" in title.lower() or "verre" in (it.get("body") or "").lower()
         is_budget = price <= 50
 
         # Données d'attribut pour le filtre JS
         data_tags = []
-        if is_rgb: data_tags.append("rgb")
-        if is_laque: data_tags.append("laque")
-        if is_scenic: data_tags.append("scenic")
+        if is_blanc: data_tags.append("blanc")
+        if is_noir: data_tags.append("noir")
+        if is_verre: data_tags.append("verre")
         if is_budget: data_tags.append("budget")
         data_tags_str = " ".join(data_tags)
 
@@ -556,11 +556,11 @@ def generate_dashboard():
         let show = false;
         if (tag === 'all') {{
           show = true;
-        }} else if (tag === 'rgb' && tags.includes('rgb')) {{
+        }} else if (tag === 'blanc' && tags.includes('blanc')) {{
           show = true;
-        }} else if (tag === 'laque' && tags.includes('laque')) {{
+        }} else if (tag === 'noir' && tags.includes('noir')) {{
           show = true;
-        }} else if (tag === 'scenic' && tags.includes('scenic')) {{
+        }} else if (tag === 'verre' && tags.includes('verre')) {{
           show = true;
         }} else if (tag === 'budget' && price <= 50) {{
           show = true;
