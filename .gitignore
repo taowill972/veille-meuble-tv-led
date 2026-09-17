@@ -1,0 +1,10 @@
+# Cache & temporary files
+__pycache__/
+*.pyc
+*.tmp
+.DS_Store
+Thumbs.db
+*.log
+
+# Heavy archives & raw dumps
+node_modules/

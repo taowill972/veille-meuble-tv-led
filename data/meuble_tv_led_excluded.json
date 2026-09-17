@@ -1,0 +1,233 @@
+[
+  {
+    "id": "3270628362",
+    "title": "Vide appartement",
+    "price": 100,
+    "city": "Fontenay-sous-Bois",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3270481896",
+    "title": "Meuble TV",
+    "price": 30,
+    "city": "Morsang-sur-Orge",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3269306604",
+    "title": "Meuble TV télé",
+    "price": 80,
+    "city": "Bobigny",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3269286853",
+    "title": "Meuble Tv ou Bahut",
+    "price": 120,
+    "city": "Montfermeil",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3269263938",
+    "title": "Buffet",
+    "price": 95,
+    "city": "Créteil",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3267613716",
+    "title": "Meuble TV / meuble bas en bois et noir – 2,10 m",
+    "price": 100,
+    "city": "Le Kremlin-Bicêtre",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3267287831",
+    "title": "Buffet / meuble TV",
+    "price": 80,
+    "city": "Paris",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3248081632",
+    "title": "Meuble TV",
+    "price": 50,
+    "city": "Massy",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3256549543",
+    "title": "Meuble TV blanc",
+    "price": 30,
+    "city": "Paris",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3260691699",
+    "title": "Meuble tv - RIKKE - 160 cm - chêne wotan - avec LE",
+    "price": 120,
+    "city": "Bezons",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3260505205",
+    "title": "Meuble tv",
+    "price": 150,
+    "city": "Vitry-sur-Seine",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3231416069",
+    "title": "Meuble tv",
+    "price": 50,
+    "city": "Melun",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3258668549",
+    "title": "Meuble tv 160",
+    "price": 120,
+    "city": "Colombes",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3258172113",
+    "title": "Meuble tv",
+    "price": 60,
+    "city": "Bruyères-le-Châtel",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3257570350",
+    "title": "Meuble tv + table basse",
+    "price": 150,
+    "city": "Nandy",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3256453623",
+    "title": "Meuble TV blanc",
+    "price": 30,
+    "city": "Lardy",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3256285820",
+    "title": "Meuble télé",
+    "price": 70,
+    "city": "Gagny",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3254808938",
+    "title": "Meuble TV a roulettes Fitueyes + TV Panasonic 42\" idéal console jeux",
+    "price": 105,
+    "city": "Saint-Maurice-Montcouronne",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3253167906",
+    "title": "Meuble TV 120 cm HavenlyHome,avec 2 Portes et 2 Etagères",
+    "price": 80,
+    "city": "Villejuif",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3251512820",
+    "title": "Meuble TV",
+    "price": 60,
+    "city": "Villeneuve-Saint-Georges",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3251445244",
+    "title": "Meuble 160cm Tv grand écran NEUF",
+    "price": 100,
+    "city": "Colombes",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3250728696",
+    "title": "Meuble tv",
+    "price": 130,
+    "city": "Créteil",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3250452596",
+    "title": "Meuble tv",
+    "price": 85,
+    "city": "Asnières-sur-Seine",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3247567266",
+    "title": "Meuble tv",
+    "price": 90,
+    "city": "Melun",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3246955750",
+    "title": "ICOO D0244 Support TV Plafond 32 34 40 42 43 48 50 55 Pouces Orientable Inclinable Hauteur réglable QLED OLED LED LCD VESA 200x200 à VESA 400x400",
+    "price": 40,
+    "city": "Pontault-Combault",
+    "reason": "Accessoire / Support TV non meuble (support mural ou plafond VESA)"
+  },
+  {
+    "id": "3213406374",
+    "title": "Meuble TV neuf",
+    "price": 120,
+    "city": "Clamart",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3246070728",
+    "title": "Meubles télévision",
+    "price": 100,
+    "city": "Levallois-Perret",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3240837902",
+    "title": "Lot TV Philips 32\" Blanche + Télécommande + Meuble TV avec Support Intégré",
+    "price": 50,
+    "city": "Paris",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3238566585",
+    "title": "Salon complet moderne gris & blanc – Table, 4 chaises, meuble TV, table basse",
+    "price": 35,
+    "city": "Nanterre",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3235705734",
+    "title": "Meuble TV Munari",
+    "price": 80,
+    "city": "Livry-Gargan",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3213813103",
+    "title": "Vend beau meubles tv",
+    "price": 100,
+    "city": "Bagneux",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3232458743",
+    "title": "Plusieurs meubles à vendre suite à un déménagement",
+    "price": 15,
+    "city": "Rueil-Malmaison",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  },
+  {
+    "id": "3231442273",
+    "title": "Meuble télé",
+    "price": 100,
+    "city": "Paris",
+    "reason": "Absence avérée d'éclairage LED (fausse correspondance sémantique)"
+  }
+]
