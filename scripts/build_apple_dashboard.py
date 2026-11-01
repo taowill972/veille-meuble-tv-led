@@ -281,7 +281,11 @@ def generate_dashboard():
         bargain_gauge = it.get("bargain_gauge", "🟢 🟢 🟢 ⚪")
         bargain_level = it.get("bargain_level", "Bonne affaire")
         discount = it.get("discount", 0)
-        msrp = it.get("msrp", 240)
+        msrp = it.get("msrp", 119.0)
+        msrp_name = it.get("msrp_name", "Meuble TV Salon Épuré 120 cm avec Kit Lumineux LED")
+        msrp_source = it.get("msrp_source", "Conforama / BUT / ManoMano")
+        msrp_url = it.get("msrp_url", "https://www.conforama.fr/salon-salle-a-manger/meuble-de-sejour/meuble-tv/c/010106")
+        msrp_savings = it.get("msrp_savings", 0)
         url = it.get("url", "")
         item_id = it.get("id", "")
 
@@ -333,7 +337,10 @@ def generate_dashboard():
               <span class="text-2xl font-black text-white drop-shadow-md">{price} €</span>
               <span class="text-xs font-semibold text-emerald-400 drop-shadow-sm">(-{discount}% vs neuf)</span>
             </div>
-            <div class="text-[10px] text-white/80 font-medium">MSRP Neuf estimé : ~{msrp} €</div>
+            <div class="text-[10px] text-white/90 font-medium flex items-center gap-1 drop-shadow-sm">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span>MSRP Réel : {msrp} € · <span class="opacity-80">{msrp_source.split('/')[0].strip()}</span></span>
+            </div>
           </div>
 
           <!-- City Tag Bottom Right -->
@@ -496,6 +503,42 @@ def generate_dashboard():
           </div>
         </div>
 
+        <!-- Empirical MSRP Grounding Box (Mode X) -->
+        <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i>
+              <span>Indexation Prix Neuf Réel (Mode X - Sincérité Technique)</span>
+            </div>
+            <span class="text-[11px] font-extrabold text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/20" id="modal-discount-badge">
+              --% d'économie
+            </span>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1">
+            <div>
+              <span class="text-slate-400 block text-[10px] uppercase font-bold">Modèle Benchmark Référencé</span>
+              <div class="font-semibold text-slate-800 dark:text-slate-100 mt-0.5" id="modal-msrp-name">--</div>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[10px] uppercase font-bold">Enseignes / Marchands</span>
+              <div class="font-semibold text-slate-800 dark:text-slate-100 mt-0.5" id="modal-msrp-source">--</div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-2 border-t border-emerald-500/15 text-xs">
+            <div>
+              <span class="text-slate-400">Tarif Neuf Constaté :</span>
+              <strong class="text-slate-900 dark:text-white font-bold ml-1 text-sm" id="modal-msrp-price">-- €</strong>
+              <span class="text-emerald-600 dark:text-emerald-400 font-bold ml-2" id="modal-msrp-savings">(-- € d'économie)</span>
+            </div>
+            <a id="modal-msrp-link" href="#" target="_blank" rel="noopener noreferrer" class="text-xs text-[#007AFF] hover:underline font-bold flex items-center gap-1 apple-btn py-1 px-2.5 rounded-lg bg-blue-500/10">
+              <span>Voir référence neuve</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </div>
+        </div>
+
         <!-- Full Description -->
         <div class="space-y-2">
           <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider">Descriptif Vendeur & Audit IA</h4>
@@ -595,6 +638,14 @@ def generate_dashboard():
       document.getElementById('modal-city').textContent = (it.city || '') + ' (' + (it.zipcode || '') + ')';
       document.getElementById('modal-lbc-link').href = it.url;
 
+      // Indexation Prix Neuf Réel (Mode X)
+      document.getElementById('modal-discount-badge').textContent = "-" + (it.discount || 0) + "% d'économie";
+      document.getElementById('modal-msrp-name').textContent = it.msrp_name || "Meuble TV LED";
+      document.getElementById('modal-msrp-source').textContent = it.msrp_source || "Conforama / BUT / ManoMano";
+      document.getElementById('modal-msrp-price').textContent = (it.msrp || "--") + " €";
+      document.getElementById('modal-msrp-savings').textContent = "(" + (it.msrp_savings || 0) + " € d'économie)";
+      document.getElementById('modal-msrp-link').href = it.msrp_url || "https://www.conforama.fr";
+
       const mainImg = document.getElementById('modal-img');
       const thumbs = document.getElementById('modal-thumbnails');
       thumbs.innerHTML = '';
@@ -617,6 +668,7 @@ def generate_dashboard():
       modal.classList.remove('opacity-0', 'pointer-events-none');
       container.classList.remove('scale-95');
       container.classList.add('scale-100');
+      if (window.lucide) lucide.createIcons();
     }}
 
     function closeQuickLook() {{

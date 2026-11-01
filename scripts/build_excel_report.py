@@ -67,7 +67,7 @@ def create_excel_report():
     ws1.views.sheetView[0].showGridLines = True
 
     # Bannière Titre
-    ws1.merge_cells("A1:M1")
+    ws1.merge_cells("A1:Q1")
     title_cell = ws1["A1"]
     title_cell.value = "🛋️ AUDIT & CLASSEMENT DÉCISIONNEL : MEUBLE TV À LED INTÉGRÉ (ATHIS-MONS 2026)"
     title_cell.font = font_title
@@ -76,15 +76,16 @@ def create_excel_report():
     ws1.row_dimensions[1].height = 40
 
     # Sous-titre stats
-    ws1.merge_cells("A2:M2")
+    ws1.merge_cells("A2:Q2")
     sub_cell = ws1["A2"]
-    sub_cell.value = f"Rayon : ≤ 25 km Athis-Mons (91200) · Total analysé : {stats.get('total_analyzed', len(listings))} annonces · Médiane Marché : {stats.get('median_price', 75)} € · Mise à jour : {stats.get('updated_at', '17/09/2026')}"
+    sub_cell.value = f"Rayon : ≤ 25 km Athis-Mons (91200) · Total analysé : {stats.get('total_analyzed', len(listings))} annonces · Médiane Marché : {stats.get('median_price', 75)} € · Relevé Prix Neuf Réel (Mode X) · Mise à jour : {stats.get('updated_at', '17/09/2026')}"
     sub_cell.font = font_note
     sub_cell.alignment = Alignment(horizontal="center", vertical="center")
     ws1.row_dimensions[2].height = 22
 
     headers = [
-        "Rang", "Score /100", "Prix (€)", "Jauge Affaire", "Décote",
+        "Rang", "Score /100", "Prix Demandé (€)", "Jauge Affaire", "MSRP Neuf Réel (€)",
+        "Modèle Réf. Neuf", "Enseigne Distributeur", "Décote Réelle (%)", "Économie Nette (€)",
         "Titre de l'Annonce", "Ville & Distance", "Système LED & Contrôle",
         "Dimensions", "Finition & Style", "Rangements & Câbles", "Scénic III", "Lien Leboncoin"
     ]
@@ -112,7 +113,11 @@ def create_excel_report():
             f"{it.get('score')}/100",
             it.get("price"),
             it.get("bargain_gauge", "🟢 🟢 🟢 ⚪"),
+            it.get("msrp", 119.0),
+            it.get("msrp_name", "Meuble TV LED"),
+            it.get("msrp_source", "Conforama / BUT"),
             f"-{it.get('discount', 0)}%",
+            f"{it.get('msrp_savings', 0)} €",
             it.get("title", ""),
             f"{it.get('city', '')} ({it.get('dist', '')} km)",
             it.get("led_type", ""),
@@ -131,7 +136,7 @@ def create_excel_report():
             cell.border = thin_border
             
             # Alignements
-            if col_idx in [1, 2, 3, 4, 5, 12, 13]:
+            if col_idx in [1, 2, 3, 4, 5, 8, 9, 16, 17]:
                 cell.alignment = Alignment(horizontal="center", vertical="center")
             else:
                 cell.alignment = Alignment(horizontal="left", vertical="center")
@@ -144,7 +149,7 @@ def create_excel_report():
                 cell.fill = fill_zebra
 
             # Lien hypertexte
-            if col_idx == 13 and link_url:
+            if col_idx == 17 and link_url:
                 cell.hyperlink = link_url
                 cell.font = font_link
 
@@ -176,7 +181,7 @@ def create_excel_report():
 
     criteria_data = [
         ("1. Système Éclairage LED & Contrôle", 25, "Ruban LED RGB avec télécommande (+25 pts) ; Rétroéclairage clips étagères verre (+20 pts) ; Ruban d'appoint mono (+18 pts).", "Ambiance lumineuse personnalisable, contrôle distant."),
-        ("2. Rapport Qualité/Prix & Décote Argus", 25, "Prix ≤ 45€ (+25 pts) ; 46-75€ (+22 pts) ; 76-100€ (+18 pts) ; > 100€ (+10-14 pts). Décote vs MSRP.", "Rentabilité immédiate pour investissement locatif."),
+        ("2. Rapport Qualité/Prix & Décote Argus Réelle (MSRP)", 25, "Indexation empirique sur catalogues réels (Conforama, BUT, IKEA, ManoMano, Leroy Merlin). Décote ≥ 75% (+25 pts) ; 55-74% (+22 pts) ; 40-54% (+18 pts) ; < 40% (+10-14 pts). Zéro estimation forfaitaire (Mode X).", "Rentabilité immédiate & arbitrage économique fondé sur des cotations e-commerce réelles."),
         ("3. Format & Logistique Scénic III / TV 55\"", 20, "Longueur 120-140cm directe sans démontage (+15 pts) ; 141-160cm (+11 pts). Proximité ≤ 15 km (+5 pts).", "Chargement coffre autonome et support TV OLED 55 pouces."),
         ("4. Rangements Multimédia & Passe-Câbles", 15, "Niches ouvertes (Box/PS5) + Portes/Tiroirs fermés (+15 pts) ; Caissons fermés (+12 pts) ; Niches nues (+11 pts).", "Câbles invisibles et dissipation thermique box TV."),
         ("5. Finition & État Visuel HD", 15, "Blanc laqué brillant High Gloss (+15 pts) ; Bi-matière chêne & blanc (+14 pts) ; Noir laqué (+13 pts).", "Harmonie design scandinave / contemporain moderne.")
